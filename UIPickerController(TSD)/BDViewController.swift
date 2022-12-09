@@ -23,8 +23,8 @@ class BDViewController: UIViewController {
         self.title = "Your Friends Birthdays"
     }
     
-    @IBAction func plusButton(_ sender: UIBarButtonItem) {
-        self.birthdayTableView.reloadData()
+    @IBAction func unwindSegue(segue: UIStoryboardSegue){
+        
     }
     
     /*
@@ -47,9 +47,10 @@ extension BDViewController : UITableViewDataSource, UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Title", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Title", for: indexPath)
                 as! PersonTableViewCell
-        cell.set(person: peopleArray[indexPath.row])
+        let object = peopleArray[indexPath.row]
+        cell.set(person: object)
         
         return cell
     }

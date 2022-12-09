@@ -7,6 +7,7 @@
 
 import Foundation
 
+//model of person for convinience
 struct Person {
     var name : String
     var telegram : String
@@ -14,7 +15,7 @@ struct Person {
     var gender : Gender
 }
 
-enum Gender {
+enum Gender : String, CaseIterable{
     case man
     case woman
     case another

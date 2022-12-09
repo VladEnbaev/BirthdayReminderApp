@@ -21,13 +21,16 @@ class ViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
     }
     
+    //hide of keyboard if user touch on screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        self.view.endEditing(true) // Скрытие клавиатуры вызванной для любого объекта
+        self.view.endEditing(true)
     }
     
     //MARK: - Navigation
+    
+    //segue with alert if email and password is empty
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AllBD" {
             if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty{

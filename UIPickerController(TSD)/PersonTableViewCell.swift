@@ -7,6 +7,7 @@
 
 import UIKit
 
+//class for custon cell
 class PersonTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -14,9 +15,9 @@ class PersonTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-     
+    
+    //func for set parametrs which we get in BDViewController
     func set(person: Person){
         self.nameLabel.text = person.name
         self.birthdayDate.text = person.birthdayDate.formatted()
