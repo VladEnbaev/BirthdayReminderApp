@@ -11,20 +11,26 @@ class BDViewController: UIViewController {
 
     @IBOutlet weak var birthdayTableView: UITableView!
     
-    @IBOutlet weak var plusButton: UIBarButtonItem!
-    
     var peopleArray = [Person]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.birthdayTableView.dataSource = self
         self.birthdayTableView.delegate = self
-       
+        self.navigationItem.leftBarButtonItem = editButtonItem
+        self.navigationItem.titleView?.tintColor = .systemIndigo
         self.title = "Your Friends Birthdays"
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue){
+        guard segue.identifier == "saveSegue" else { return }
+        let detailsVC = segue.source as! DetailsViewController
+         
+        let person = detailsVC.person
         
+        let newIndexPath = IndexPath(row: peopleArray.count, section: 0)
+        self.peopleArray.append(person)
+        self.birthdayTableView.insertRows(at: [newIndexPath], with: .fade)
     }
     
     /*
