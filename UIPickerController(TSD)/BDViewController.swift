@@ -15,35 +15,44 @@ class BDViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //table view
         self.birthdayTableView.dataSource = self
         self.birthdayTableView.delegate = self
-        self.navigationItem.leftBarButtonItem = editButtonItem
-        self.navigationItem.titleView?.tintColor = .systemIndigo
+        //navigation controller
         self.title = "Your Friends Birthdays"
     }
     
+    
+    // MARK: - Navigation
+    //unwind segue from save button in DetailVC
     @IBAction func unwindSegue(segue: UIStoryboardSegue){
         guard segue.identifier == "saveSegue" else { return }
         let detailsVC = segue.source as! DetailsViewController
-         
-        let person = detailsVC.person
+        let recievedPerson = detailsVC.person
         
-        let newIndexPath = IndexPath(row: peopleArray.count, section: 0)
-        self.peopleArray.append(person)
-        self.birthdayTableView.insertRows(at: [newIndexPath], with: .fade)
+        //checks if the user back from the new screen or changed the old one
+        //if row is selected it means that the user clicked on it
+        if let selectedIndexPath = birthdayTableView.indexPathForSelectedRow{
+            peopleArray[selectedIndexPath.row] = recievedPerson
+            birthdayTableView.reloadRows(at: [selectedIndexPath], with: .fade)
+        } else {
+            let newIndexPath = IndexPath(row: peopleArray.count, section: 0)
+            self.peopleArray.append(recievedPerson)
+            self.birthdayTableView.insertRows(at: [newIndexPath], with: .fade)
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
+    //prepare for segue to change data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let person = segue.destination as? DetailsViewController{
-            person.delegate = self
-            print("norm")
-        }
+        guard segue.identifier == "editPersonSegue" else { return }
         
+        let indexPath = birthdayTableView.indexPathForSelectedRow!
+        let seguePerson = peopleArray[indexPath.row]
+        guard let navigationVC = segue.destination as? UINavigationController else { return }
+        guard let detailsVC = navigationVC.topViewController as? DetailsViewController else { return }
+        detailsVC.person = seguePerson
+        detailsVC.title = "\(seguePerson.name)"
     }
-    */
 }
 
 extension BDViewController : UITableViewDataSource, UITableViewDelegate{

@@ -187,6 +187,7 @@
                                         <connections>
                                             <outlet property="birthdayDate" destination="nSQ-YC-3dh" id="LSQ-5p-02B"/>
                                             <outlet property="nameLabel" destination="gXs-Ab-D4x" id="dgl-v9-uZ0"/>
+                                            <segue destination="Or2-ZM-l4C" kind="show" identifier="editPersonSegue" id="FLy-ze-wbv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -206,7 +207,7 @@
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" red="0.34118300676345825" green="0.48056405782699585" blue="0.90660923719406128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="Or2-ZM-l4C" kind="show" id="JxY-Hr-thf"/>
+                                <segue destination="Or2-ZM-l4C" kind="show" identifier="" id="JxY-Hr-thf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -230,7 +231,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-90-ijR">
                                 <rect key="frame" x="20" y="359" width="360" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="dataChanged:" destination="Mk8-E9-u05" eventType="editingDidEnd" id="6nG-BB-PCy"/>
@@ -239,7 +240,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O04-15-8Vg">
                                 <rect key="frame" x="19" y="279" width="360" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="dataChanged:" destination="Mk8-E9-u05" eventType="editingChanged" id="oiY-Ru-1g2"/>
@@ -359,6 +360,9 @@
             <point key="canvasLocation" x="4526" y="3"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FLy-ze-wbv"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

@@ -27,6 +27,6 @@ class PersonTableViewCell: UITableViewCell {
         dateFormatter.timeStyle = .none
         
         self.nameLabel.text = person.name
-        self.birthdayDate.text =  dateFormatter.string(from: person.birthdayDate)
+        self.birthdayDate.text = dateFormatter.string(from: person.birthdayDate)
     }
 }

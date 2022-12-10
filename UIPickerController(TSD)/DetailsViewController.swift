@@ -16,24 +16,38 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var genderPicker: UIPickerView!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    let gender : Gender? = nil
+    
     var person = Person(name: "", telegram: "", birthdayDate: Date.now, gender: .another)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //text fields
+        self.nameTextField.font = UIFont.systemFont(ofSize: 18)
+        self.tgTextField.font = UIFont.systemFont(ofSize: 18)
+        //navigation controller
         self.navigationItem.style = .editor
+        //picker
         self.genderPicker.delegate = self
         self.genderPicker.dataSource = self
         self.birthdayDatePicker.datePickerMode = .date
         self.birthdayDatePicker.locale = Locale(identifier: "en_US")
-        updateSaveButtonState()
+        //important funcs
+        self.updateUI()
+        self.updateSaveButtonState()
+    }
+    
+    //update UI for data from TableView for editing
+    private func updateUI() {
+        self.nameTextField.text = person.name
+        self.tgTextField.text = person.telegram
+        self.birthdayDatePicker.setDate(person.birthdayDate, animated: true)
+        let rowOfGender = Gender.allCases.firstIndex(of: person.gender)
+        self.genderPicker.selectRow(Int(rowOfGender!), inComponent: 0, animated: true)
     }
     
     //checking fields
     private func updateSaveButtonState(){
         let nameText = nameTextField.text ?? ""
-//        let tgText = tgTextField.text ?? ""
-        
         self.saveButton.isEnabled = !nameText.isEmpty
     }
     
@@ -41,22 +55,26 @@ class DetailsViewController: UIViewController {
     @IBAction func dataChanged(_ sender: Any) {
         updateSaveButtonState()
     }
+    
     //hide of keyboard if user touch on screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
     }
     
+    
+    //MARK: -Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        guard segue.identifier == "saveSegue" else { return }
-        
-        let name = nameTextField.text ?? ""
-        let telegram = tgTextField.text ?? ""
-        let birthday : Date = birthdayDatePicker.date
-        let gender = Gender.another
-        
-        self.person = Person(name: name, telegram: telegram, birthdayDate: birthday, gender: gender)
+        if segue.identifier == "saveSegue"{
+            let name = nameTextField.text ?? ""
+            let telegram = tgTextField.text ?? ""
+            let birthday : Date = birthdayDatePicker.date
+            let gender : Gender = .allCases[genderPicker.selectedRow(inComponent: 0)]
+            
+            self.person = Person(name: name, telegram: telegram, birthdayDate: birthday, gender: gender)
+            
+        }
     }
 }
 
@@ -73,6 +91,8 @@ extension DetailsViewController : UIPickerViewDataSource, UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Gender.allCases[row].rawValue
+        let currentGender = Gender.allCases[row]
+        if currentGender == .another { return "-" }
+        return currentGender.rawValue
     }
 }

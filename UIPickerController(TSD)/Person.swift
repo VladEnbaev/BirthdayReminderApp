@@ -16,7 +16,7 @@ struct Person {
 }
 
 enum Gender : String, CaseIterable{
+    case another
     case man
     case woman
-    case another
 }
