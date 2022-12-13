@@ -17,6 +17,10 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    let screenWidth = UIScreen.main.bounds.width - 10
+    let screenHeight = UIScreen.main.bounds.height / 2
+    var selectedRow = 0
+    
     var person = Person(name: "", telegram: "", birthdayDate: Date.now, gender: .another)
     
     override func viewDidLoad() {
@@ -29,6 +33,7 @@ class DetailsViewController: UIViewController {
         //picker
         self.genderPicker.delegate = self
         self.genderPicker.dataSource = self
+        //datepicker
         self.birthdayDatePicker.datePickerMode = .date
         self.birthdayDatePicker.locale = Locale(identifier: "en_US")
         //important funcs
@@ -88,6 +93,10 @@ extension DetailsViewController : UIPickerViewDataSource, UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return Gender.allCases.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 60
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
