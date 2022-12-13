@@ -13,6 +13,7 @@ struct Person {
     var telegram : String
     var birthdayDate : Date
     var gender : Gender
+    var isFavorite : Bool = false
 }
 
 enum Gender : String, CaseIterable{

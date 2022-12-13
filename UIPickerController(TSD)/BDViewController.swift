@@ -120,4 +120,22 @@ extension BDViewController : UITableViewDataSource, UITableViewDelegate{
         birthdayTableView.reloadData()
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return UISwipeActionsConfiguration(actions: [likeAction(at: indexPath)])
+    }
+    func likeAction(at indexPath: IndexPath) -> UIContextualAction {
+        var newPerson = peopleArray[indexPath.row]
+        let action = UIContextualAction(style: .normal, title: "") { [unowned self] (action, view, completion) in
+            newPerson.isFavorite = !newPerson.isFavorite
+            self.peopleArray[indexPath.row] = newPerson
+            completion(true)
+        }
+        action.backgroundColor = .systemIndigo
+        let filledHeart = UIImage(systemName: "heart.fill")
+        let heart = UIImage(systemName: "heart")
+        let image = newPerson.isFavorite ? filledHeart : heart
+        action.image = image
+        
+        return action
+    }
 }
