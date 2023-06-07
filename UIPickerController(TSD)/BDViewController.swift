@@ -24,12 +24,14 @@ class BDViewController: UIViewController {
     
     @IBOutlet weak var editButton: UIBarButtonItem!
     
-    var peopleArray = [Person(name: "Nika", telegram: "milaska", birthdayDate: Date.fromString("17.09.2004")!,                       gender: .woman),
-                       Person(name: "Vlad", telegram: "01001010", birthdayDate: Date.fromString("01.10.2004")!, gender: .man),
-                       Person(name: "Emir", telegram: "debil", birthdayDate: Date.fromString("22.09.2004")!, gender: .man)]
+    var peopleArray : [Person] = []
+    
+    var storage : StorageManagerProtocol = StorageManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // load data from User Defaults
+        loadDataFromUserDef()
         //table view
         self.birthdayTableView.dataSource = self
         self.birthdayTableView.delegate = self
@@ -37,6 +39,7 @@ class BDViewController: UIViewController {
         self.title = "Your Friends Birthdays"
         //edit button
         self.editButton.title = "Edit"
+    
     }
     
     @IBAction func editButtonTaped(_ sender: UIBarButtonItem) {
@@ -50,6 +53,12 @@ class BDViewController: UIViewController {
             self.editButton.style = .plain
         }
     }
+    
+    func loadDataFromUserDef(){
+        guard let userDefaultsPeopleArray : [Person] = storage.codableData(forKey: .peopleArray) else { return }
+        self.peopleArray = userDefaultsPeopleArray
+    }
+    
     
     // MARK: - Navigation
     //unwind segue from save button in DetailVC
@@ -66,8 +75,9 @@ class BDViewController: UIViewController {
         } else {
             let newIndexPath = IndexPath(row: peopleArray.count, section: 0)
             self.peopleArray.append(recievedPerson)
-            self.birthdayTableView.insertRows(at: [newIndexPath], with: .fade)
+            birthdayTableView.reloadData()
         }
+        storage.set(object: peopleArray, forKey: .peopleArray)
     }
     
     //prepare for segue to change data
@@ -76,12 +86,13 @@ class BDViewController: UIViewController {
         
         let indexPath = birthdayTableView.indexPathForSelectedRow!
         let seguePerson = peopleArray[indexPath.row]
-        guard let navigationVC = segue.destination as? UINavigationController else { return }
-        guard let detailsVC = navigationVC.topViewController as? DetailsViewController else { return }
+        guard let detailsVC = segue.destination as? DetailsViewController else { return }
         detailsVC.person = seguePerson
         detailsVC.title = "\(seguePerson.name)"
     }
 }
+
+
 
 extension BDViewController : UITableViewDataSource, UITableViewDelegate{
     
@@ -115,8 +126,8 @@ extension BDViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let movedEmoji = peopleArray.remove(at: sourceIndexPath.row)
-        peopleArray.insert(movedEmoji, at: destinationIndexPath.row)
+        let movedPerson = peopleArray.remove(at: sourceIndexPath.row)
+        peopleArray.insert(movedPerson, at: destinationIndexPath.row)
         birthdayTableView.reloadData()
     }
     
@@ -139,3 +150,8 @@ extension BDViewController : UITableViewDataSource, UITableViewDelegate{
         return action
     }
 }
+
+
+//Person(name: "Nika", telegram: "milaska", birthdayDate: Date.fromString("16.09.2004")!, gender: .woman),
+//                   Person(name: "Vlad", telegram: "01001010", birthdayDate: Date.fromString("01.10.2004")!, gender: .man),
+//                   Person(name: "Emir", telegram: "debil", birthdayDate: Date.fromString("22.09.2004")!, gender: .man)

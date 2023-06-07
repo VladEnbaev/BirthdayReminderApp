@@ -32,17 +32,17 @@ class ViewController: UIViewController {
     
     //segue with alert if email and password is empty
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AllBD" {
-            if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty{
-                let alertController = UIAlertController(title: "error", message: "enter email and password", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "ok", style: .default)
-                
-                alertController.addAction(action)
-                
-                self.present(alertController, animated: true)
-            }
-        }
+//        if segue.identifier == "AllBD" {
+//            if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty{
+//                let alertController = UIAlertController(title: "error", message: "enter email and password", preferredStyle: .alert)
+//                
+//                let action = UIAlertAction(title: "ok", style: .default)
+//                
+//                alertController.addAction(action)
+//                
+//                self.present(alertController, animated: true)
+//            }
+//        }
     }
 }
 

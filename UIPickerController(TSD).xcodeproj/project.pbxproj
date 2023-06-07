@@ -10,6 +10,9 @@
 		FF169D8029410320008AE1B1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF169D7F29410320008AE1B1 /* DetailsViewController.swift */; };
 		FF169D8229423033008AE1B1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF169D8129423033008AE1B1 /* Person.swift */; };
 		FF169D84294232F7008AE1B1 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF169D83294232F7008AE1B1 /* PersonTableViewCell.swift */; };
+		FF7301C12A30A85900A9F4BF /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7301C02A30A85900A9F4BF /* StorageManager.swift */; };
+		FF92DED02948E2630027A596 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92DECF2948E2630027A596 /* PhotoCell.swift */; };
+		FF92DED22948E2A30027A596 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92DED12948E2A30027A596 /* PhotoController.swift */; };
 		FFC0F7482940D96800C36E27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0F7472940D96800C36E27 /* AppDelegate.swift */; };
 		FFC0F74A2940D96800C36E27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0F7492940D96800C36E27 /* SceneDelegate.swift */; };
 		FFC0F74C2940D96800C36E27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0F74B2940D96800C36E27 /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 		FF169D7F29410320008AE1B1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		FF169D8129423033008AE1B1 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		FF169D83294232F7008AE1B1 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		FF7301C02A30A85900A9F4BF /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FF92DECF2948E2630027A596 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		FF92DED12948E2A30027A596 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 		FFC0F7442940D96800C36E27 /* UIPickerController(TSD).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIPickerController(TSD).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC0F7472940D96800C36E27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFC0F7492940D96800C36E27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF7301BF2A309FE700A9F4BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF169D8129423033008AE1B1 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FFC0F73B2940D96700C36E27 = {
 			isa = PBXGroup;
 			children = (
@@ -68,9 +82,12 @@
 				FFC0F7492940D96800C36E27 /* SceneDelegate.swift */,
 				FFC0F74B2940D96800C36E27 /* ViewController.swift */,
 				FFC0F75B2940E40F00C36E27 /* BDViewController.swift */,
-				FF169D7F29410320008AE1B1 /* DetailsViewController.swift */,
-				FF169D8129423033008AE1B1 /* Person.swift */,
+				FF7301BF2A309FE700A9F4BF /* Model */,
 				FF169D83294232F7008AE1B1 /* PersonTableViewCell.swift */,
+				FF7301C02A30A85900A9F4BF /* StorageManager.swift */,
+				FF169D7F29410320008AE1B1 /* DetailsViewController.swift */,
+				FF92DED12948E2A30027A596 /* PhotoController.swift */,
+				FF92DECF2948E2630027A596 /* PhotoCell.swift */,
 				FFC0F74D2940D96800C36E27 /* Main.storyboard */,
 				FFC0F7502940D96900C36E27 /* Assets.xcassets */,
 				FFC0F7522940D96900C36E27 /* LaunchScreen.storyboard */,
@@ -153,8 +170,11 @@
 				FF169D8229423033008AE1B1 /* Person.swift in Sources */,
 				FFC0F74C2940D96800C36E27 /* ViewController.swift in Sources */,
 				FFC0F7482940D96800C36E27 /* AppDelegate.swift in Sources */,
+				FF92DED22948E2A30027A596 /* PhotoController.swift in Sources */,
 				FFC0F75C2940E40F00C36E27 /* BDViewController.swift in Sources */,
+				FF92DED02948E2630027A596 /* PhotoCell.swift in Sources */,
 				FFC0F74A2940D96800C36E27 /* SceneDelegate.swift in Sources */,
+				FF7301C12A30A85900A9F4BF /* StorageManager.swift in Sources */,
 				FF169D84294232F7008AE1B1 /* PersonTableViewCell.swift in Sources */,
 				FF169D8029410320008AE1B1 /* DetailsViewController.swift in Sources */,
 			);

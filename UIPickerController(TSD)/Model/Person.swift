@@ -8,15 +8,16 @@
 import Foundation
 
 //model of person for convinience
-struct Person {
+struct Person : Codable {
     var name : String
     var telegram : String
     var birthdayDate : Date
     var gender : Gender
     var isFavorite : Bool = false
+    var imageName : String?
 }
 
-enum Gender : String, CaseIterable{
+enum Gender : String, CaseIterable, Codable {
     case another
     case man
     case woman

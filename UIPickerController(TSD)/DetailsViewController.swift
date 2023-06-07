@@ -17,6 +17,9 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
+    @IBOutlet weak var personImageView: UIImageView!
+    var imageName : String?
+    
     let screenWidth = UIScreen.main.bounds.width - 10
     let screenHeight = UIScreen.main.bounds.height / 2
     var selectedRow = 0
@@ -39,6 +42,9 @@ class DetailsViewController: UIViewController {
         //important funcs
         self.updateUI()
         self.updateSaveButtonState()
+        //image view
+        self.personImageView.layer.cornerRadius = 10
+        
     }
     
     //update UI for data from TableView for editing
@@ -46,6 +52,10 @@ class DetailsViewController: UIViewController {
         self.nameTextField.text = person.name
         self.tgTextField.text = person.telegram
         self.birthdayDatePicker.setDate(person.birthdayDate, animated: true)
+        if let newImageName = person.imageName{
+            self.imageName = newImageName
+            self.personImageView.image = UIImage(named: newImageName)
+        }
         let rowOfGender = Gender.allCases.firstIndex(of: person.gender)
         self.genderPicker.selectRow(Int(rowOfGender!), inComponent: 0, animated: true)
     }
@@ -69,6 +79,15 @@ class DetailsViewController: UIViewController {
     
     
     //MARK: -Navigation
+    //unwind segue
+    @IBAction func photoSegue(unwindSegue: UIStoryboardSegue) {
+        guard unwindSegue.identifier == "photoSegue" else { return }
+        let photoCC = unwindSegue.source as! PhotoController
+        let newImageName = photoCC.imageName
+        self.imageName = newImageName
+        self.personImageView.image = UIImage(named: newImageName!)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "saveSegue"{
@@ -76,8 +95,8 @@ class DetailsViewController: UIViewController {
             let telegram = tgTextField.text ?? ""
             let birthday : Date = birthdayDatePicker.date
             let gender : Gender = .allCases[genderPicker.selectedRow(inComponent: 0)]
-            
-            self.person = Person(name: name, telegram: telegram, birthdayDate: birthday, gender: gender)
+            let newImageName = self.imageName
+            self.person = Person(name: name, telegram: telegram, birthdayDate: birthday, gender: gender, imageName: newImageName)
             
         }
     }
