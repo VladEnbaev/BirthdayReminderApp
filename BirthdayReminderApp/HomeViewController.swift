@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // load data from User Defaults
-        loadDataFromUserDef()
+        loadDataFromUserDefaults()
         //table view
         self.birthdayTableView.dataSource = self
         self.birthdayTableView.delegate = self
@@ -39,6 +39,11 @@ class HomeViewController: UIViewController {
         //edit button
         self.editButton.title = "Edit"
     
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        storage.set(object: peopleArray, forKey: .peopleArray)
     }
     
     @IBAction func editButtonTaped(_ sender: UIBarButtonItem) {
@@ -60,7 +65,7 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    func loadDataFromUserDef(){
+    private func loadDataFromUserDefaults(){
         guard let userDefaultsPeopleArray : [Person] = storage.codableData(forKey: .peopleArray) else { return }
         self.peopleArray = userDefaultsPeopleArray
     }
@@ -72,7 +77,6 @@ class HomeViewController: UIViewController {
         guard segue.identifier == "saveSegue" else { return }
         let detailsVC = segue.source as! DetailsViewController
         let recievedPerson = detailsVC.person
-        
         //checks if the user back from the new screen or changed the old one
         //if row is selected it means that the user clicked on it
         if let selectedIndexPath = birthdayTableView.indexPathForSelectedRow{
@@ -81,9 +85,8 @@ class HomeViewController: UIViewController {
         } else {
             let newIndexPath = IndexPath(row: peopleArray.count, section: 0)
             self.peopleArray.append(recievedPerson)
-            birthdayTableView.reloadData()
+            self.birthdayTableView.insertRows(at: [newIndexPath], with: .fade)
         }
-        storage.set(object: peopleArray, forKey: .peopleArray)
     }
     
     //prepare for segue to change data

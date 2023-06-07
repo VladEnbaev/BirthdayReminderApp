@@ -22,19 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         if StorageManager.shared.bool(forKey: .isFirstEnter) ?? true {
-            let vc = (storyboard.instantiateViewController(withIdentifier: "WelcomeViewControllerID") as? WelcomeViewController)
-            if let vc2 = vc {
-                firstVC = vc2
-            } else {
-                print("fucking storyboard")
+            if let welcomeVC = (storyboard.instantiateViewController(withIdentifier: "WelcomeViewControllerID") as? WelcomeViewController) {
+                firstVC = welcomeVC
             }
-
         } else {
-            let vc = (storyboard.instantiateViewController(withIdentifier: "BDViewControllerID") as? HomeViewController)
-            if let vc2 = vc {
-                firstVC = vc2
-            } else {
-                print("fucking storyboard")
+            if let homeVC = (storyboard.instantiateViewController(withIdentifier: "BDViewControllerID") as? HomeViewController) {
+                firstVC = homeVC
             }
         }
         let navigationVC = UINavigationController(rootViewController: firstVC)
