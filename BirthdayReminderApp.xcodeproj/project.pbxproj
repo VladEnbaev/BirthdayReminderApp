@@ -29,7 +29,7 @@
 		FF7301C02A30A85900A9F4BF /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		FF92DECF2948E2630027A596 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		FF92DED12948E2A30027A596 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
-		FFC0F7442940D96800C36E27 /* UIPickerController(TSD).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIPickerController(TSD).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFC0F7442940D96800C36E27 /* BirthdayRemainderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayRemainderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC0F7472940D96800C36E27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFC0F7492940D96800C36E27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FFC0F74B2940D96800C36E27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		FFC0F7452940D96800C36E27 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FFC0F7442940D96800C36E27 /* UIPickerController(TSD).app */,
+				FFC0F7442940D96800C36E27 /* BirthdayRemainderApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,9 +99,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FFC0F7432940D96800C36E27 /* UIPickerController(TSD) */ = {
+		FFC0F7432940D96800C36E27 /* BirthdayRemainderApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FFC0F7582940D96900C36E27 /* Build configuration list for PBXNativeTarget "UIPickerController(TSD)" */;
+			buildConfigurationList = FFC0F7582940D96900C36E27 /* Build configuration list for PBXNativeTarget "BirthdayRemainderApp" */;
 			buildPhases = (
 				FFC0F7402940D96800C36E27 /* Sources */,
 				FFC0F7412940D96800C36E27 /* Frameworks */,
@@ -111,9 +111,9 @@
 			);
 			dependencies = (
 			);
-			name = "UIPickerController(TSD)";
+			name = BirthdayRemainderApp;
 			productName = "UIPickerController(TSD)";
-			productReference = FFC0F7442940D96800C36E27 /* UIPickerController(TSD).app */;
+			productReference = FFC0F7442940D96800C36E27 /* BirthdayRemainderApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -131,7 +131,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FFC0F73F2940D96800C36E27 /* Build configuration list for PBXProject "UIPickerController(TSD)" */;
+			buildConfigurationList = FFC0F73F2940D96800C36E27 /* Build configuration list for PBXProject "BirthdayReminderApp" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -144,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FFC0F7432940D96800C36E27 /* UIPickerController(TSD) */,
+				FFC0F7432940D96800C36E27 /* BirthdayRemainderApp */,
 			);
 		};
 /* End PBXProject section */
@@ -381,7 +381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FFC0F73F2940D96800C36E27 /* Build configuration list for PBXProject "UIPickerController(TSD)" */ = {
+		FFC0F73F2940D96800C36E27 /* Build configuration list for PBXProject "BirthdayReminderApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FFC0F7562940D96900C36E27 /* Debug */,
@@ -390,7 +390,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FFC0F7582940D96900C36E27 /* Build configuration list for PBXNativeTarget "UIPickerController(TSD)" */ = {
+		FFC0F7582940D96900C36E27 /* Build configuration list for PBXNativeTarget "BirthdayRemainderApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FFC0F7592940D96900C36E27 /* Debug */,
