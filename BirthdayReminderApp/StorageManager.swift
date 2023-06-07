@@ -24,8 +24,11 @@ protocol StorageManagerProtocol {
 final class StorageManager {
     public enum Keys: String {
         case peopleArray
+        case isFirstEnter
     }
 
+    static let shared = StorageManager()
+    
     private let userDefaults = UserDefaults.standard
 
     private func store(_ object: Any?, key: String) {

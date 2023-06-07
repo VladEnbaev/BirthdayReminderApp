@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PhotoController: UIViewController {
+class PhotoViewController: UIViewController {
 
     @IBOutlet weak var photoCollection: UICollectionView!
     
@@ -27,7 +27,7 @@ class PhotoController: UIViewController {
     }
 }
 
-extension PhotoController : UICollectionViewDelegate, UICollectionViewDataSource {
+extension PhotoViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -71,7 +71,7 @@ extension PhotoController : UICollectionViewDelegate, UICollectionViewDataSource
     }
 }
 
-extension PhotoController : UICollectionViewDelegateFlowLayout {
+extension PhotoViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemPerPow : CGFloat = 2

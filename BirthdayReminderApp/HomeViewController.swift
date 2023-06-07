@@ -18,15 +18,14 @@ extension Date {
         }
     }
 }
-class BDViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var birthdayTableView: UITableView!
-    
     @IBOutlet weak var editButton: UIBarButtonItem!
     
     var peopleArray : [Person] = []
     
-    var storage : StorageManagerProtocol = StorageManager()
+    var storage : StorageManagerProtocol = StorageManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +51,13 @@ class BDViewController: UIViewController {
             self.editButton.title = "Edit"
             self.editButton.style = .plain
         }
+    }
+    @IBAction func plusButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailVC = storyboard.instantiateViewController(withIdentifier: R.StoryboardIDs.detailViewControllerID) as? DetailsViewController
+            else { return }
+        
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func loadDataFromUserDef(){
@@ -94,7 +100,7 @@ class BDViewController: UIViewController {
 
 
 
-extension BDViewController : UITableViewDataSource, UITableViewDelegate{
+extension HomeViewController : UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.peopleArray.count

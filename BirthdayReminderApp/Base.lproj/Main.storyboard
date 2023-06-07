@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="czO-fj-WME">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KuS-35-P73">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="UIP-ul-Aa9">
             <objects>
-                <viewController id="KuS-35-P73" customClass="ViewController" customModule="UIPickerController_TSD_" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KuS-35-P73" customClass="WelcomeViewController" customModule="BirthdayRemainderApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="blo-6y-NrV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ax7-uu-iNF">
-                                <rect key="frame" x="50" y="253.66666666666663" width="293" height="136.33333333333337"/>
+                                <rect key="frame" x="50" y="209.66666666666663" width="293" height="136.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="z2X-8O-KU8">
                                         <rect key="frame" x="0.0" y="0.0" width="293" height="60.333333333333336"/>
@@ -67,14 +68,14 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="396-en-HHF">
-                                <rect key="frame" x="41" y="185.66666666666666" width="347" height="60"/>
+                                <rect key="frame" x="41" y="141.66666666666666" width="347" height="60"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <color key="textColor" red="0.34118300676345825" green="0.48056405782699585" blue="0.90660923719406128" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAJ-xt-Qlz">
-                                <rect key="frame" x="108.66666666666669" y="521" width="176" height="38"/>
+                                <rect key="frame" x="108.66666666666669" y="477" width="176" height="38"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="176" id="oij-CQ-WXf"/>
@@ -86,11 +87,11 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="2F0-Ha-cPy" kind="show" identifier="AllBD" id="iPV-mA-Ehn"/>
+                                    <action selector="enterButtonTapped:" destination="KuS-35-P73" eventType="touchUpInside" id="Jx9-ij-u2z"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reminder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvc-T3-tUP">
-                                <rect key="frame" x="6" y="416" width="371" height="60"/>
+                                <rect key="frame" x="6" y="372" width="371" height="60"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="snD-oe-bdP"/>
@@ -118,19 +119,19 @@
                     </view>
                     <navigationItem key="navigationItem" id="kw4-dy-mNc"/>
                     <connections>
-                        <outlet property="emailTextField" destination="4Qq-Lo-auN" id="Ago-V9-6rJ"/>
+                        <outlet property="emailTextField" destination="4Qq-Lo-auN" id="kL6-OA-BxQ"/>
                         <outlet property="enterButton" destination="IAJ-xt-Qlz" id="G1N-Ww-L6W"/>
-                        <outlet property="passwordTextField" destination="vGQ-57-gO8" id="END-t1-R7J"/>
+                        <outlet property="passwordTextField" destination="vGQ-57-gO8" id="YYu-lW-gNo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9N-Kk-8Im" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2880.8000000000002" y="3.1484257871064472"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="14o-dW-xkC">
             <objects>
-                <viewController id="2F0-Ha-cPy" customClass="BDViewController" customModule="UIPickerController_TSD_" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BDViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2F0-Ha-cPy" customClass="HomeViewController" customModule="BirthdayRemainderApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wDw-vU-xDI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,7 +142,7 @@
                                 <color key="separatorColor" red="0.34118300676345825" green="0.48056405782699585" blue="0.90660923719406128" alpha="0.2261513158" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.34118300676345825" green="0.48056405782699585" blue="0.90660923719406128" alpha="0.65583881580000003" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Title" rowHeight="75" id="yUt-W5-kdp" customClass="PersonTableViewCell" customModule="UIPickerController_TSD_" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Title" rowHeight="75" id="yUt-W5-kdp" customClass="PersonTableViewCell" customModule="BirthdayRemainderApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yUt-W5-kdp" id="eAp-I2-hRS">
@@ -189,7 +190,6 @@
                                             <outlet property="birthdayDate" destination="nSQ-YC-3dh" id="LSQ-5p-02B"/>
                                             <outlet property="nameLabel" destination="gXs-Ab-D4x" id="dgl-v9-uZ0"/>
                                             <outlet property="personIcon" destination="ZyZ-bt-IPo" id="1bB-cS-PJk"/>
-                                            <segue destination="Mk8-E9-u05" kind="show" identifier="editPersonSegue" id="cOj-Lc-HBB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -215,7 +215,7 @@
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" red="0.34118300676345825" green="0.48056405782699585" blue="0.90660923719406128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="Mk8-E9-u05" kind="show" identifier="" id="yoc-Iz-AfC"/>
+                                <action selector="plusButtonTapped:" destination="2F0-Ha-cPy" id="dGF-JM-MwP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -232,24 +232,21 @@
         <!--Details View Controller-->
         <scene sceneID="Qvd-rV-tet">
             <objects>
-                <viewController id="Mk8-E9-u05" customClass="DetailsViewController" customModule="UIPickerController_TSD_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mk8-E9-u05" customClass="DetailsViewController" customModule="BirthdayRemainderApp" sceneMemberID="viewController">
                     <view key="view" contentMode="top" id="n4a-Uv-1LC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EK1-eD-qBp">
-                                <rect key="frame" x="94.333333333333314" y="102" width="204.33333333333337" height="201"/>
+                                <rect key="frame" x="94.333333333333329" y="102" width="204.33333333333337" height="201"/>
                                 <color key="tintColor" red="0.34118300676345825" green="0.48056405782699585" blue="0.90660923719406128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QL5-Ld-Pf9">
-                                <rect key="frame" x="94.333333333333314" y="100" width="204.33333333333337" height="204.33333333333337"/>
+                                <rect key="frame" x="94.333333333333329" y="100.00000000000001" width="204.33333333333337" height="204.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QL5-Ld-Pf9" secondAttribute="height" multiplier="1:1" id="Pnl-5Z-Bjz"/>
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="plain"/>
-                                <connections>
-                                    <segue destination="Nd5-jJ-BAy" kind="show" id="Myo-P3-k2M"/>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lND-15-qis">
                                 <rect key="frame" x="8.6666666666666572" y="312.33333333333326" width="376" height="497.66666666666674"/>
@@ -369,44 +366,39 @@
                             <constraint firstItem="EK1-eD-qBp" firstAttribute="height" secondItem="QL5-Ld-Pf9" secondAttribute="height" id="vBw-3c-iLn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" style="browser" id="g73-eq-3dQ">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="EEE-NP-jgh">
-                            <color key="tintColor" red="0.34118300676345825" green="0.48056405782699585" blue="0.90660923719406128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Mj3-PW-4W7">
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="IxB-aq-M0D">
                             <connections>
-                                <segue destination="qaw-0q-pBQ" kind="unwind" unwindAction="unwindSegueWithSegue:" id="j42-ux-wKh"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="5AD-Jl-9q2">
-                            <color key="tintColor" red="0.34118300676345825" green="0.48056405782699585" blue="0.90660923719406128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="qaw-0q-pBQ" kind="unwind" identifier="saveSegue" unwindAction="unwindSegueWithSegue:" id="SvR-db-CAI"/>
+                                <action selector="saveButtonTapped:" destination="Mk8-E9-u05" id="Xnh-gc-uf1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="birthdayDatePicker" destination="O8C-cd-4cC" id="IT2-2a-M8T"/>
                         <outlet property="genderPicker" destination="F4Q-eI-s4h" id="KgR-mA-n3R"/>
                         <outlet property="nameTextField" destination="O04-15-8Vg" id="ZLG-eh-CFB"/>
                         <outlet property="personImageView" destination="EK1-eD-qBp" id="qJp-k4-H1D"/>
-                        <outlet property="saveButton" destination="5AD-Jl-9q2" id="P19-sZ-bdM"/>
+                        <outlet property="saveButton" destination="IxB-aq-M0D" id="Rnd-VI-RHG"/>
                         <outlet property="tgTextField" destination="fgc-90-ijR" id="8Ua-EF-bls"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4BR-ho-aCa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="qaw-0q-pBQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4573" y="4"/>
+            <point key="canvasLocation" x="4538" y="4"/>
         </scene>
-        <!--Photo Controller-->
+        <!--Photo View Controller-->
         <scene sceneID="LyH-eO-XmF">
             <objects>
-                <viewController id="wpA-9k-Spk" customClass="PhotoController" customModule="UIPickerController_TSD_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewControllerID" id="wpA-9k-Spk" customClass="PhotoViewController" customModule="BirthdayRemainderApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FFC-Pw-pEA">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vio-F4-B9v">
-                                <rect key="frame" x="0.0" y="56" width="393" height="727"/>
+                                <rect key="frame" x="0.0" y="56" width="393" height="786"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AKH-bE-dgO">
                                     <size key="itemSize" width="128" height="128"/>
@@ -415,7 +407,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="OkG-SL-hvN" customClass="PhotoCell" customModule="UIPickerController_TSD_" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="OkG-SL-hvN" customClass="PhotoCell" customModule="BirthdayRemainderApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="5xg-0m-k9u">
@@ -459,6 +451,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="photoCollection" destination="vio-F4-B9v" id="bxh-xE-tTf"/>
@@ -467,49 +460,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjE-1r-X6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="HHQ-ro-897" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6237" y="3"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="tDz-WG-96b">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="czO-fj-WME" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Vo-bP-0XE">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="KuS-35-P73" kind="relationship" relationship="rootViewController" id="Vl1-af-ZJM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VMU-H5-tdF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1954.9618320610687" y="3.5211267605633805"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="C3K-Ii-h9Q">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nd5-jJ-BAy" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="gjS-q5-A7o"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P6S-vx-1Z4">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wpA-9k-Spk" kind="relationship" relationship="rootViewController" id="NPT-t2-r0v"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2g9-jK-ZRX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5424" y="3"/>
+            <point key="canvasLocation" x="5418" y="4"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="cOj-Lc-HBB"/>
-    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.34118300676345825" green="0.48056405782699585" blue="0.90660923719406128" alpha="0.48675799939999997" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

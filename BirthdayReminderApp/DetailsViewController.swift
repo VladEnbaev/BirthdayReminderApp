@@ -77,12 +77,14 @@ class DetailsViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    @IBAction func saveButtonTapped(_ sender: Any) {
+    }
     
     //MARK: -Navigation
     //unwind segue
     @IBAction func photoSegue(unwindSegue: UIStoryboardSegue) {
         guard unwindSegue.identifier == "photoSegue" else { return }
-        let photoCC = unwindSegue.source as! PhotoController
+        let photoCC = unwindSegue.source as! PhotoViewController
         let newImageName = photoCC.imageName
         self.imageName = newImageName
         self.personImageView.image = UIImage(named: newImageName!)

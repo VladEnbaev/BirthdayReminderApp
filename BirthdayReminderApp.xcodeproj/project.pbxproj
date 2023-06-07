@@ -12,14 +12,15 @@
 		FF169D84294232F7008AE1B1 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF169D83294232F7008AE1B1 /* PersonTableViewCell.swift */; };
 		FF7301C12A30A85900A9F4BF /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7301C02A30A85900A9F4BF /* StorageManager.swift */; };
 		FF92DED02948E2630027A596 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92DECF2948E2630027A596 /* PhotoCell.swift */; };
-		FF92DED22948E2A30027A596 /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92DED12948E2A30027A596 /* PhotoController.swift */; };
+		FF92DED22948E2A30027A596 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF92DED12948E2A30027A596 /* PhotoViewController.swift */; };
 		FFC0F7482940D96800C36E27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0F7472940D96800C36E27 /* AppDelegate.swift */; };
 		FFC0F74A2940D96800C36E27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0F7492940D96800C36E27 /* SceneDelegate.swift */; };
-		FFC0F74C2940D96800C36E27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0F74B2940D96800C36E27 /* ViewController.swift */; };
+		FFC0F74C2940D96800C36E27 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0F74B2940D96800C36E27 /* WelcomeViewController.swift */; };
 		FFC0F74F2940D96800C36E27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFC0F74D2940D96800C36E27 /* Main.storyboard */; };
 		FFC0F7512940D96900C36E27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC0F7502940D96900C36E27 /* Assets.xcassets */; };
 		FFC0F7542940D96900C36E27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFC0F7522940D96900C36E27 /* LaunchScreen.storyboard */; };
-		FFC0F75C2940E40F00C36E27 /* BDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0F75B2940E40F00C36E27 /* BDViewController.swift */; };
+		FFC0F75C2940E40F00C36E27 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC0F75B2940E40F00C36E27 /* HomeViewController.swift */; };
+		FFEE58A52A30CAF800527B0F /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEE58A42A30CAF800527B0F /* Resources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,16 +29,17 @@
 		FF169D83294232F7008AE1B1 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		FF7301C02A30A85900A9F4BF /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		FF92DECF2948E2630027A596 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		FF92DED12948E2A30027A596 /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		FF92DED12948E2A30027A596 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		FFC0F7442940D96800C36E27 /* BirthdayRemainderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayRemainderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC0F7472940D96800C36E27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFC0F7492940D96800C36E27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FFC0F74B2940D96800C36E27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FFC0F74B2940D96800C36E27 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		FFC0F74E2940D96800C36E27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFC0F7502940D96900C36E27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFC0F7532940D96900C36E27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFC0F7552940D96900C36E27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFC0F75B2940E40F00C36E27 /* BDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDViewController.swift; sourceTree = "<group>"; };
+		FFC0F75B2940E40F00C36E27 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FFEE58A42A30CAF800527B0F /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +61,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FF7301C22A30ADC400A9F4BF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FFC0F7502940D96900C36E27 /* Assets.xcassets */,
+				FFC0F7522940D96900C36E27 /* LaunchScreen.storyboard */,
+				FFC0F7552940D96900C36E27 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		FF7301C32A30AE9000A9F4BF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				FF169D83294232F7008AE1B1 /* PersonTableViewCell.swift */,
+				FF92DECF2948E2630027A596 /* PhotoCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		FFC0F73B2940D96700C36E27 = {
 			isa = PBXGroup;
 			children = (
-				FFC0F7462940D96800C36E27 /* UIPickerController(TSD) */,
+				FFC0F7462940D96800C36E27 /* BirthdayReminderApp */,
 				FFC0F7452940D96800C36E27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,25 +96,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FFC0F7462940D96800C36E27 /* UIPickerController(TSD) */ = {
+		FFC0F7462940D96800C36E27 /* BirthdayReminderApp */ = {
 			isa = PBXGroup;
 			children = (
 				FFC0F7472940D96800C36E27 /* AppDelegate.swift */,
 				FFC0F7492940D96800C36E27 /* SceneDelegate.swift */,
-				FFC0F74B2940D96800C36E27 /* ViewController.swift */,
-				FFC0F75B2940E40F00C36E27 /* BDViewController.swift */,
-				FF7301BF2A309FE700A9F4BF /* Model */,
-				FF169D83294232F7008AE1B1 /* PersonTableViewCell.swift */,
 				FF7301C02A30A85900A9F4BF /* StorageManager.swift */,
-				FF169D7F29410320008AE1B1 /* DetailsViewController.swift */,
-				FF92DED12948E2A30027A596 /* PhotoController.swift */,
-				FF92DECF2948E2630027A596 /* PhotoCell.swift */,
 				FFC0F74D2940D96800C36E27 /* Main.storyboard */,
-				FFC0F7502940D96900C36E27 /* Assets.xcassets */,
-				FFC0F7522940D96900C36E27 /* LaunchScreen.storyboard */,
-				FFC0F7552940D96900C36E27 /* Info.plist */,
+				FFC0F74B2940D96800C36E27 /* WelcomeViewController.swift */,
+				FFC0F75B2940E40F00C36E27 /* HomeViewController.swift */,
+				FF169D7F29410320008AE1B1 /* DetailsViewController.swift */,
+				FF92DED12948E2A30027A596 /* PhotoViewController.swift */,
+				FFEE58A42A30CAF800527B0F /* Resources.swift */,
+				FF7301BF2A309FE700A9F4BF /* Model */,
+				FF7301C32A30AE9000A9F4BF /* Subviews */,
+				FF7301C22A30ADC400A9F4BF /* SupportingFiles */,
 			);
-			path = "UIPickerController(TSD)";
+			path = BirthdayReminderApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,13 +187,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF169D8229423033008AE1B1 /* Person.swift in Sources */,
-				FFC0F74C2940D96800C36E27 /* ViewController.swift in Sources */,
+				FFC0F74C2940D96800C36E27 /* WelcomeViewController.swift in Sources */,
 				FFC0F7482940D96800C36E27 /* AppDelegate.swift in Sources */,
-				FF92DED22948E2A30027A596 /* PhotoController.swift in Sources */,
-				FFC0F75C2940E40F00C36E27 /* BDViewController.swift in Sources */,
+				FF92DED22948E2A30027A596 /* PhotoViewController.swift in Sources */,
+				FFC0F75C2940E40F00C36E27 /* HomeViewController.swift in Sources */,
 				FF92DED02948E2630027A596 /* PhotoCell.swift in Sources */,
 				FFC0F74A2940D96800C36E27 /* SceneDelegate.swift in Sources */,
 				FF7301C12A30A85900A9F4BF /* StorageManager.swift in Sources */,
+				FFEE58A52A30CAF800527B0F /* Resources.swift in Sources */,
 				FF169D84294232F7008AE1B1 /* PersonTableViewCell.swift in Sources */,
 				FF169D8029410320008AE1B1 /* DetailsViewController.swift in Sources */,
 			);
@@ -326,7 +346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T574RGJCUB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "UIPickerController(TSD)/Info.plist";
+				INFOPLIST_FILE = BirthdayReminderApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Birthday Reminder";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -357,7 +377,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T574RGJCUB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "UIPickerController(TSD)/Info.plist";
+				INFOPLIST_FILE = BirthdayReminderApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Birthday Reminder";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
